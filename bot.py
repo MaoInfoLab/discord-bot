@@ -7,7 +7,7 @@ from aiohttp import web
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 DATA_FILE = "last_message_times.json"
-HOURS_THRESHOLD = 5
+MINUTES_THRESHOLD = 1
 
 if os.path.exists(DATA_FILE):
     with open(DATA_FILE, 'r', encoding='utf-8') as f:
@@ -36,8 +36,9 @@ async def on_message(message):
     current_time = time.time()
     last_time = last_times.get(key)
     
-    if last_time is None or (current_time - last_time > HOURS_THRESHOLD * 3600):
-        await message.channel.send("おお")
+    # 3分（180秒）以上経過しているか判定
+    if last_time is None or (current_time - last_time > MINUTES_THRESHOLD * 60):
+        await message.channel.send("久しぶり！")
     
     last_times[key] = current_time
     save_data()
