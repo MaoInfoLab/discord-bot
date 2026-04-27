@@ -1,0 +1,6 @@
+last_message_times.json
+__pycache__/
+*.pyc
+.env
+*.log
+.DS_Store
