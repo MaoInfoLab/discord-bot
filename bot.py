@@ -38,7 +38,7 @@ async def on_message(message):
     
     # 3分（180秒）以上経過しているか判定
     if last_time is None or (current_time - last_time > MINUTES_THRESHOLD * 60):
-        await message.channel.send("久しぶり！")
+        await message.channel.send("おお")
     
     last_times[key] = current_time
     save_data()
