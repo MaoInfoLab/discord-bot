@@ -37,7 +37,7 @@ async def on_message(message):
     last_time = last_times.get(key)
     
     if last_time is None or (current_time - last_time > HOURS_THRESHOLD * 3600):
-        await message.channel.send("久しぶり！")
+        await message.channel.send("おお")
     
     last_times[key] = current_time
     save_data()
