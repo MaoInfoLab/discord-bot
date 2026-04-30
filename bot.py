@@ -7,7 +7,7 @@ from aiohttp import web
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 DATA_FILE = "last_message_times.json"
-SECONDS_THRESHOLD = 900  # 1分（60秒）
+SECONDS_THRESHOLD = 6000  # 1分（60秒）
 
 if os.path.exists(DATA_FILE):
     with open(DATA_FILE, 'r', encoding='utf-8') as f:
