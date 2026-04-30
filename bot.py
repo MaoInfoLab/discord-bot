@@ -9,13 +9,6 @@ TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 DATA_FILE = "last_message_times.json"
 SECONDS_THRESHOLD = 60  # 1分（60秒）
 
-AURU_KEYWORDS = [
-    "あ", "いいよ", "イギリス", "すこし", "たしかに", "だめ", "なんの", "は",
-    "ます", "まだ", "ロンドン", "思う", "就活","きも","声優","cv","百合",
-    "ゆり","声","かわいい","就職", "帰る", "帰国", "日本", "LINE",
-    "いいよこいよ", "こいよ", "そうだよ","やります", "やりますね", "来いよ"
-]
-
 if os.path.exists(DATA_FILE):
     with open(DATA_FILE, 'r', encoding='utf-8') as f:
         last_times = json.load(f)
@@ -40,26 +33,33 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    print(f"📩 受信: {message.content} | 送信者: {message.author.name}")
-
+    content = message.content
     key = f"{message.guild.id}_{message.author.id}"
     current_time = time.time()
     last_time = last_times.get(key)
 
-    # 🔽 優先順位をつけ、1つだけ返信するように変更
-    if any(keyword in message.content for keyword in AURU_KEYWORDS):
-        await message.channel.send("その言葉，auruが見たらどう思うでしょうか？")
-        print("✅ 条件3発動: auruチェック")
-        
-    elif "おお" in message.content:
+    # 🔽 優先順位順に判定（1メッセージにつき1回だけ返信）
+    if any(kw in content for kw in ["ザオ", "鳴潮", "めいちょ", "スタレ", "崩壊", "ネクサス", "NTE", "エンド", "勉強"]):
+        await message.channel.send("原神を！やりなさい！")
+    elif any(kw in content for kw in ["原神", "ガチャ"]):
+        await message.channel.send("とりあえず2凸")
+    elif any(kw in content for kw in ["就活", "就職", "仕事"]):
+        await message.channel.send("やだ")
+    elif any(kw in content for kw in ["おっぱい", "いいよこいよ", "こいよ", "そうだよ","やります", "やりますね", "来いよ",]):
+        await message.channel.send("その言葉，auruに見せられますか？")
+    elif any(kw in content for kw in ["w", "草", "ｗｗｗ", "草生える", "くさ"]):
+        await message.channel.send("草やめてね")
+    elif any(kw in content for kw in ["百合", "ゆり", "女の子"]):
+        await message.channel.send("うわ")
+    elif any(kw in content for kw in ["声", "声優", "cv", "CV", "ボイス", "中の人"]):
+        await message.channel.send("うお")
+    elif any(kw in content for kw in ["おお", "おお！"]):
         await message.channel.send("冷笑しないで！")
-        print("✅ 条件2発動: 冷笑しないで！")
-        
+    # キーワードに引っかからず、かつ1分以上経過している場合のみ発動
     elif last_time is None or (current_time - last_time > SECONDS_THRESHOLD):
         await message.channel.send("おお")
-        print("✅ 条件1発動: おお")
 
-    # どの条件が当たっても、最終発言時間は更新
+    # 最終発言時間を更新・保存（どの条件が当たってもタイマーはリセット）
     last_times[key] = current_time
     save_data()
 
