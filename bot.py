@@ -11,9 +11,9 @@ SECONDS_THRESHOLD = 60  # 1分（60秒）
 
 AURU_KEYWORDS = [
     "あ", "いいよ", "イギリス", "すこし", "たしかに", "だめ", "なんの", "は",
-    "ハンガリー", "ます", "まだ", "ロンドン", "思う", "就活",
-    "就職", "帰る", "帰国", "日本", "いいよこいよ", "こいよ", "そうだよ",
-    "やります", "やりますね", "来いよ", "アメリカ", "東京", 
+    "ます", "まだ", "ロンドン", "思う", "就活","きも","声優","cv","百合",
+    "ゆり","声","かわいい","就職", "帰る", "帰国", "日本", "LINE",
+    "いいよこいよ", "こいよ", "そうだよ","やります", "やりますね", "来いよ"
 ]
 
 if os.path.exists(DATA_FILE):
@@ -37,33 +37,29 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    # Bot自身のメッセージは無視（無限ループ防止）
     if message.author.bot:
         return
 
-    # 🔍 デバッグ用：受信内容をコンソールに出力
     print(f"📩 受信: {message.content} | 送信者: {message.author.name}")
 
     key = f"{message.guild.id}_{message.author.id}"
     current_time = time.time()
     last_time = last_times.get(key)
 
-    # 1. 1分以上喋っていない人への反応
-    if last_time is None or (current_time - last_time > SECONDS_THRESHOLD):
-        await message.channel.send("おお")
-        print("✅ 条件1発動: おお")
-
-    # 2. 「おお」を含むメッセージへの反応
-    if "おお" in message.content:
-        await message.channel.send("冷笑しないで！")
-        print("✅ 条件2発動: 冷笑しないで！")
-
-    # 3. 特定キーワードを含むメッセージへの反応
+    # 🔽 優先順位をつけ、1つだけ返信するように変更
     if any(keyword in message.content for keyword in AURU_KEYWORDS):
         await message.channel.send("その言葉，auruが見たらどう思うでしょうか？")
         print("✅ 条件3発動: auruチェック")
+        
+    elif "おお" in message.content:
+        await message.channel.send("冷笑しないで！")
+        print("✅ 条件2発動: 冷笑しないで！")
+        
+    elif last_time is None or (current_time - last_time > SECONDS_THRESHOLD):
+        await message.channel.send("おお")
+        print("✅ 条件1発動: おお")
 
-    # 最終発言時間を更新・保存
+    # どの条件が当たっても、最終発言時間は更新
     last_times[key] = current_time
     save_data()
 
