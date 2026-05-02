@@ -61,6 +61,8 @@ async def on_message(message):
         await message.channel.send("逆張りだからこいつ")
     elif any(kw in content for kw in ["`@oppo3087` "]):
         await message.channel.send("なに")
+    elif any(kw in content for kw in ["うお"]):
+        await message.channel.send("うおやめてね")
     elif any(kw in content for kw in ["おお", "おお！"]):
         await message.channel.send("冷笑しないで！")
     elif any(kw in content for kw in ["は", "だね", "だよ"]):
