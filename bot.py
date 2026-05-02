@@ -49,6 +49,8 @@ async def on_message(message):
         await message.channel.send("その言葉，auruに見せられますか？")
     elif any(kw in content for kw in ["w", "草", "ｗｗｗ", "草生える", "くさ"]):
         await message.channel.send("草やめてね")
+    elif any(kw in content for kw in ["ダリア"]):
+        await message.channel.send("ダリア【だりあ】［人名］かわいい。原神で一番最強のキャラクター。[補足]インターネット上では「弱い」といった言説が見られますが，デマです。")
     elif any(kw in content for kw in ["百合", "ゆり", "女の子"]):
         await message.channel.send("うわ")
     elif any(kw in content for kw in ["声", "声優", "cv", "CV", "ボイス", "中の人"]):
