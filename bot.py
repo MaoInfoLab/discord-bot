@@ -7,7 +7,7 @@ from aiohttp import web
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 DATA_FILE = "last_message_times.json"
-SECONDS_THRESHOLD = 3000  # 1分（60秒）
+SECONDS_THRESHOLD = 3000  
 
 if os.path.exists(DATA_FILE):
     with open(DATA_FILE, 'r', encoding='utf-8') as f:
@@ -67,10 +67,11 @@ async def on_message(message):
         await message.channel.send("冷笑しないで！")
     elif any(kw in content for kw in ["は", "だね", "だよ"]):
         await message.channel.send("楽しいね")
-    # キーワードに引っかからず、かつ1分以上経過している場合のみ発動
+    elif 0 < len(content.strip()) <= 4:
+        await message.channel.send(f"{content.strip()}やめてね")
+    # キーワードに引っかからず、かつ指定時間経過している場合のみ発動
     elif last_time is None or (current_time - last_time > SECONDS_THRESHOLD):
         await message.channel.send("おお")
-
     # 最終発言時間を更新・保存（どの条件が当たってもタイマーはリセット）
     last_times[key] = current_time
     save_data()
