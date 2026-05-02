@@ -55,8 +55,6 @@ async def on_message(message):
         await message.channel.send("うお")
     elif any(kw in content for kw in ["おお", "おお！"]):
         await message.channel.send("冷笑しないで！")
-    elif any(kw in content for kw in ["酒", "飲み会"]):　
-        await message.channel.send("🤮")
     # キーワードに引っかからず、かつ1分以上経過している場合のみ発動
     elif last_time is None or (current_time - last_time > SECONDS_THRESHOLD):
         await message.channel.send("おお")
