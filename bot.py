@@ -42,7 +42,7 @@ async def on_message(message):
     if any(kw in content for kw in ["ザオ", "鳴潮", "めいちょ", "スタレ", "崩壊", "ネクサス", "NTE", "エンド", "勉強"]):
         await message.channel.send("原神を！やりなさい！")
     elif any(kw in content for kw in ["原神", "ガチャ"]):
-        await message.channel.send("とりあえず2凸")
+        await message.channel.send("とりあえず2凸モチ")
     elif any(kw in content for kw in ["就活", "就職", "仕事"]):
         await message.channel.send("やだ")
     elif any(kw in content for kw in ["おっぱい", "いいよこいよ", "こいよ", "そうだよ","やります", "やりますね", "来いよ",]):
