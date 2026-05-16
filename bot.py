@@ -67,6 +67,8 @@ async def on_message(message):
         await message.channel.send("冷笑しないで！")
     elif any(kw in content for kw in ["は", "だね", "だよ"]):
         await message.channel.send("楽しいね")
+    elif any(kw in content for kw in ["リネ"]):  # ← ここに追加
+        await message.channel.send("https://tenor.com/view/sigewinnie-genshin-genshin-impact-leaks-character-leak-gif-1216000685053636709")
     elif 0 < len(content.strip()) <= 4:
         await message.channel.send(f"{content.strip()}やめてね")
     # キーワードに引っかからず、かつ指定時間経過している場合のみ発動
