@@ -63,7 +63,7 @@ async def on_message(message):
         await message.channel.send("逆張りだからこいつ")
     elif any(kw in content for kw in ["なぜ", "謎", "なんで", "なに"]):
         await message.channel.send("https://tenor.com/view/cure-arcana-shadow-precure-arcana-shadow-luluka-moria-precure-luluka-precure-dance-gif-17243076929342579173")
-    elif any(kw in content for kw in ["@oppo3087"]):
+    elif any(kw in content for kw in ["auru"]):
         await message.channel.send("https://tenor.com/view/yuyukins-gif-18068006183217981224")
     elif any(kw in content for kw in [" everyone"]):
         await message.channel.send("https://tenor.com/view/cure-kyun-kyun-kokoro-shigure-kimi-to-idol-precure-kimipre-anime-gif-8023485156496488590")
