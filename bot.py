@@ -43,24 +43,30 @@ async def on_message(message):
         await message.channel.send("原神を！やりなさい！")
     elif any(kw in content for kw in ["原神", "ガチャ"]):
         await message.channel.send("とりあえず2凸モチ")
+    elif any(kw in content for kw in ["男", "男子", "男の子"]):
+        await message.channel.send("https://tenor.com/view/shikanoin-heizou-heizou-genshin-impact-heizou-hearts-gif-26198418")
     elif any(kw in content for kw in ["就活", "就職", "仕事"]):
-        await message.channel.send("やだ")
+        await message.channel.send("https://tenor.com/view/purirun-kimi-to-idol-precure-kimipre-anime-pretty-cure-gif-5032373692102869446")
     elif any(kw in content for kw in ["おっぱい", "いいよこいよ", "こいよ", "そうだよ","やります", "やりますね", "来いよ",]):
         await message.channel.send("その言葉，auruに見せられますか？")
     elif any(kw in content for kw in ["w", "草", "ｗｗｗ", "草生える", "くさ"]):
         await message.channel.send("草やめてね")
     elif any(kw in content for kw in ["ダリア"]):
-        await message.channel.send("ダリア【だりあ】［人名］かわいい。原神で一番最強のキャラクター。[補足]インターネット上では「弱い」といった言説が見られますが，デマです。")
+        await message.channel.send("https://tenor.com/view/dahlia-gossip-dahlia-genshin-gif-9226785474710340951")
     elif any(kw in content for kw in ["百合", "ゆり", "女の子"]):
-        await message.channel.send("うわ")
+        await message.channel.send("https://tenor.com/view/yuki-nekoyashiki-wonderful-precure-anime-pretty-cure-precure-gif-7405302306864560985")
     elif any(kw in content for kw in ["声", "声優", "cv", "CV", "ボイス", "中の人"]):
-        await message.channel.send("うお")
+        await message.channel.send("🤢🤮")
     elif any(kw in content for kw in ["酒", "飲み会", "ワイン", "飲み"]):
         await message.channel.send("🤢🤮")
     elif any(kw in content for kw in ["さかき", "HUAW", "榊"]):
         await message.channel.send("逆張りだからこいつ")
-    elif any(kw in content for kw in ["`@oppo3087` "]):
-        await message.channel.send("なに")
+    elif any(kw in content for kw in ["なぜ", "謎", "なんで", "なに"]):
+        await message.channel.send("https://tenor.com/view/cure-arcana-shadow-precure-arcana-shadow-luluka-moria-precure-luluka-precure-dance-gif-17243076929342579173")
+    elif any(kw in content for kw in ["@oppo3087"]):
+        await message.channel.send("https://tenor.com/view/yuyukins-gif-18068006183217981224")
+    elif any(kw in content for kw in [" everyone"]):
+        await message.channel.send("https://tenor.com/view/cure-kyun-kyun-kokoro-shigure-kimi-to-idol-precure-kimipre-anime-gif-8023485156496488590")
     elif any(kw in content for kw in ["うお"]):
         await message.channel.send("うおやめてね")
     elif any(kw in content for kw in ["おお", "おお！"]):
