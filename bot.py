@@ -71,7 +71,7 @@ async def on_message(message):
     elif any(kw in content for kw in ["酒", "飲み会", "ワイン", "飲み"]):
         await message.channel.send("健康によくない!")
         await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
-    elif any(kw in content for kw in ["さかき", "HUAW", "榊"]):
+    elif any(kw in content for kw in ["さかき", "HUAW", "榊", "増", "ます", "すだ", "田"]):
         await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
         await message.channel.send("健康によくない!")
     elif any(kw in content for kw in ["なぜ", "謎", "なんで", "なに"]):
