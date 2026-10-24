@@ -39,47 +39,65 @@ async def on_message(message):
     last_time = last_times.get(key)
 
     # 🔽 優先順位順に判定（1メッセージにつき1回だけ返信）
-    if any(kw in content for kw in ["ザオ", "鳴潮", "めいちょ", "スタレ", "崩壊", "ネクサス", "NTE", "エンド", "勉強"]):
-        await message.channel.send("原神を！やりなさい！")
+    if any(kw in content for kw in ["マイクラ", "就", "めいちょ", "スタレ", "崩壊", "ネクサス", "NTE", "エンド", "勉強", "鳴潮"]):
+        await message.channel.send("https://klipy.com/gifs/uika-uika-misumi-1")
+        await message.channel.send("健康によくない!")
+    elif any(kw in content for kw in ["睡眠", "寝る","寝","起","睡"]):
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
+        await message.channel.send("健康によくない!")
     elif any(kw in content for kw in ["原神", "ガチャ"]):
-        await message.channel.send("とりあえず2凸モチ")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
+        await message.channel.send("健康によくない!")
     elif any(kw in content for kw in ["男", "男子", "男の子"]):
         await message.channel.send("https://tenor.com/view/shikanoin-heizou-heizou-genshin-impact-heizou-hearts-gif-26198418")
     elif any(kw in content for kw in ["就活", "就職", "仕事"]):
-        await message.channel.send("https://tenor.com/view/purirun-kimi-to-idol-precure-kimipre-anime-pretty-cure-gif-5032373692102869446")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
     elif any(kw in content for kw in ["おっぱい", "いいよこいよ", "こいよ", "そうだよ","やります", "やりますね", "来いよ",]):
-        await message.channel.send("その言葉，auruに見せられますか？")
+        await message.channel.send("https://klipy.com/gifs/sandbina-columbina")
     elif any(kw in content for kw in ["w", "草", "ｗｗｗ", "草生える", "くさ"]):
         await message.channel.send("草やめてね")
     elif any(kw in content for kw in ["ダリア"]):
-        await message.channel.send("https://tenor.com/view/dahlia-gossip-dahlia-genshin-gif-9226785474710340951")
+        await message.channel.send("https://klipy.com/gifs/mortis-ave-mujica-3")
     elif any(kw in content for kw in ["百合", "ゆり", "女の子"]):
-        await message.channel.send("https://tenor.com/view/yuki-nekoyashiki-wonderful-precure-anime-pretty-cure-precure-gif-7405302306864560985")
+        await message.channel.send("https://klipy.com/gifs/mortis-ave-mujica-3")
+        await message.channel.send("健康によくない!")
+    elif any(kw in content for kw in ["しね", "死"]):
+        await message.channel.send("https://klipy.com/gifs/bandori-anime")
+    elif any(kw in content for kw in ["ごめん", "ごめ", "ごめんね"]):
+        await message.channel.send("https://klipy.com/gifs/umiri-yahata-bandori")
     elif any(kw in content for kw in ["声", "声優", "cv", "CV", "ボイス", "中の人"]):
-        await message.channel.send("🤢🤮")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
+        await message.channel.send("健康によくない!")
     elif any(kw in content for kw in ["酒", "飲み会", "ワイン", "飲み"]):
-        await message.channel.send("🤢🤮")
+        await message.channel.send("健康によくない!")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
     elif any(kw in content for kw in ["さかき", "HUAW", "榊"]):
-        await message.channel.send("逆張りだからこいつ")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
+        await message.channel.send("健康によくない!")
     elif any(kw in content for kw in ["なぜ", "謎", "なんで", "なに"]):
-        await message.channel.send("https://tenor.com/view/cure-arcana-shadow-precure-arcana-shadow-luluka-moria-precure-luluka-precure-dance-gif-17243076929342579173")
+        await message.channel.send("https://klipy.com/gifs/bandori-bang-dream-88")
     elif any(kw in content for kw in ["auru"]):
         await message.channel.send("https://tenor.com/view/yuyukins-gif-18068006183217981224")
     elif any(kw in content for kw in [" everyone"]):
-        await message.channel.send("https://tenor.com/view/cure-kyun-kyun-kokoro-shigure-kimi-to-idol-precure-kimipre-anime-gif-8023485156496488590")
+        await message.channel.send("https://klipy.com/gifs/bandori-anime")
     elif any(kw in content for kw in ["うお"]):
         await message.channel.send("うおやめてね")
+    elif any(kw in content for kw in ["おう", "太"]):
+        await message.channel.send("健康によくない!")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
     elif any(kw in content for kw in ["おお", "おお！"]):
         await message.channel.send("冷笑しないで！")
-    elif any(kw in content for kw in ["は", "だね", "だよ"]):
+    elif any(kw in content for kw in ["は", "だね", "だよ", "なん"]):
         await message.channel.send("楽しいね")
+    elif any(kw in content for kw in ["じゃん"]):
+        await message.channel.send("そうだね")
     elif any(kw in content for kw in ["リネ"]):  # ← ここに追加
         await message.channel.send("https://tenor.com/view/sigewinnie-genshin-genshin-impact-leaks-character-leak-gif-1216000685053636709")
     elif 0 < len(content.strip()) <= 4:
         await message.channel.send(f"{content.strip()}やめてね")
     # キーワードに引っかからず、かつ指定時間経過している場合のみ発動
     elif last_time is None or (current_time - last_time > SECONDS_THRESHOLD):
-        await message.channel.send("おお")
+        await message.channel.send("うお")
     # 最終発言時間を更新・保存（どの条件が当たってもタイマーはリセット）
     last_times[key] = current_time
     save_data()
