@@ -53,44 +53,53 @@ async def on_message(message):
     elif any(kw in content for kw in ["就活", "就職", "仕事"]):
         await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
     elif any(kw in content for kw in ["おっぱい", "いいよこいよ", "こいよ", "そうだよ","やります", "やりますね", "来いよ",]):
-        await message.channel.send("https://klipy.com/gifs/sandbina-columbina")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-nyamuchi")
+    elif any(kw in content for kw in ["ろり", "エロ", "えっち", "マチ","マッチ", "人間", "女", "性格"]):
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-nyamuchi")
     elif any(kw in content for kw in ["w", "草", "ｗｗｗ", "草生える", "くさ"]):
         await message.channel.send("草やめてね")
+        await message.channel.send("https://klipy.com/gifs/anime-bandori-27")
     elif any(kw in content for kw in ["ダリア"]):
         await message.channel.send("https://klipy.com/gifs/mortis-ave-mujica-3")
     elif any(kw in content for kw in ["百合", "ゆり", "女の子"]):
-        await message.channel.send("https://klipy.com/gifs/mortis-ave-mujica-3")
-        await message.channel.send("健康によくない!")
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-nyamuchi")
     elif any(kw in content for kw in ["しね", "死"]):
         await message.channel.send("https://klipy.com/gifs/bandori-anime")
+        await message.channel.send("https://klipy.com/gifs/umiri-bang-dream")
     elif any(kw in content for kw in ["ごめん", "ごめ", "ごめんね"]):
         await message.channel.send("https://klipy.com/gifs/umiri-yahata-bandori")
-    elif any(kw in content for kw in ["声", "声優", "cv", "CV", "ボイス", "中の人"]):
-        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
-        await message.channel.send("健康によくない!")
+    elif any(kw in content for kw in ["声", "声優", "cv", "CV", "ボイス", "中の人", "乳"]):
+        await message.channel.send("https://klipy.com/gifs/ave-mujica-nyamuchi")
     elif any(kw in content for kw in ["酒", "飲み会", "ワイン", "飲み"]):
         await message.channel.send("健康によくない!")
         await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
+    elif any(kw in content for kw in ["コミケ","コミ", "冬コミ", "夏コミ", "絵", "イラスト", "クリスタ", "イラレ"]):
+        await message.channel.send("https://klipy.com/gifs/mortis-mutsumi-4")
+        await message.channel.send("早く描こうね")
     elif any(kw in content for kw in ["さかき", "HUAW", "榊", "増", "ます", "すだ", "田"]):
-        await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
+        await message.channel.send("https://klipy.com/gifs/anime-bandori-27")
         await message.channel.send("健康によくない!")
     elif any(kw in content for kw in ["なぜ", "謎", "なんで", "なに"]):
         await message.channel.send("https://klipy.com/gifs/bandori-bang-dream-88")
     elif any(kw in content for kw in ["auru"]):
-        await message.channel.send("https://tenor.com/view/yuyukins-gif-18068006183217981224")
+        await message.channel.send("https://klipy.com/gifs/anime-bandori-27")
     elif any(kw in content for kw in [" everyone"]):
         await message.channel.send("https://klipy.com/gifs/bandori-anime")
     elif any(kw in content for kw in ["うお"]):
         await message.channel.send("うおやめてね")
+        await message.channel.send("https://klipy.com/gifs/anime-bandori-27")
     elif any(kw in content for kw in ["おう", "太"]):
         await message.channel.send("健康によくない!")
         await message.channel.send("https://klipy.com/gifs/ave-mujica-mutsumi-9")
     elif any(kw in content for kw in ["おお", "おお！"]):
         await message.channel.send("冷笑しないで！")
+        await message.channel.send("https://klipy.com/gifs/anime-bandori-27")
     elif any(kw in content for kw in ["は", "だね", "だよ", "なん"]):
         await message.channel.send("楽しいね")
-    elif any(kw in content for kw in ["じゃん"]):
+        await message.channel.send("https://klipy.com/gifs/bandori-bang-dream-88")
+    elif any(kw in content for kw in ["じゃん","ですね", "すね"]):
         await message.channel.send("そうだね")
+        await message.channel.send("https://klipy.com/gifs/bandori-ave-mujica-2")
     elif any(kw in content for kw in ["リネ"]):  # ← ここに追加
         await message.channel.send("https://tenor.com/view/sigewinnie-genshin-genshin-impact-leaks-character-leak-gif-1216000685053636709")
     elif 0 < len(content.strip()) <= 4:
